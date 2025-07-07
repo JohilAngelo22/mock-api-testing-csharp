@@ -13,7 +13,7 @@ jobs:
         ports:
           - 9876:8080
         volumes:
-          - ./mocks/_mappings:/home/wiremock/mappings
+          - ./mocks/_mappings:/home/wiremock/mappings:ro
 
     env:
       API_BASE_URL: http://localhost:9876
