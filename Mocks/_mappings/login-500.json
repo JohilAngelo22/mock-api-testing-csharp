@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.username == 'cause500')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "body": "{ \"error\": \"Internal Server Error\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

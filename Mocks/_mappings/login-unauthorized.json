@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.username == 'baduser')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 401,
+    "body": "{ \"error\": \"Unauthorized: Invalid credentials\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

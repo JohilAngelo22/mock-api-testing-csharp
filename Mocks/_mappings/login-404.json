@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/unknown-login"
+  },
+  "response": {
+    "status": 404,
+    "body": "{ \"error\": \"Not Found: Invalid endpoint\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

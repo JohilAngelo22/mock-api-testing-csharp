@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(@.username == 'wronguser')]" }
+    ]
+  },
+  "response": {
+    "status": 401,
+    "body": "{ \"error\": \"Unauthorized\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

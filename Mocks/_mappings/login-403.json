@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.username == 'blockedUser')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 403,
+    "body": "{ \"error\": \"Forbidden: Account blocked\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

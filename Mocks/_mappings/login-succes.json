@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.username == 'testuser')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"token\": \"mock123\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

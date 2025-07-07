@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(!@.username)]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "{ \"error\": \"Bad Request: Missing username\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
