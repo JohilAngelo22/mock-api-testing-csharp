@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework;
 using RestSharp;
 using System.Net;
+using WiremockDemoSLT.Tests;
 
-namespace WiremockDemoSLT.Tests;
+namespace Tests;
 [TestFixture]
 public class LoginTests : BaseTest
 {
