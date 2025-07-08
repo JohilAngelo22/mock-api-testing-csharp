@@ -122,25 +122,20 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
 
-    services:
-      wiremock:
-        image: wiremock/wiremock:3.3.1
-        ports:
-          - 9876:8080
-        volumes:
-          - ./mocks/_mappings:/home/wiremock/mappings
-
-    env:
-      API_BASE_URL: http://localhost:9876
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Docker Compose
+        run: docker compose version
+
+      - name: Start WireMock with docker-compose
+        run: docker compose up -d
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '7.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -150,6 +145,9 @@ jobs:
 
       - name: Run tests
         run: dotnet test --configuration Release --logger trx
+
+      - name: Stop WireMock
+        run: docker compose down
 ```
 
 ---
