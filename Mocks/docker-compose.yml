@@ -6,4 +6,4 @@ services:
     ports:
       - "9876:8080"
     volumes:
-      - ./_mappings:/home/wiremock/mappings
+      - ./_mappings:/home/wiremock/mappings:ro
