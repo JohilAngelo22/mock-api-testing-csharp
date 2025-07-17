@@ -2,6 +2,8 @@ name: WireMock Tests CI
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '25 16 * * 4'
 
 jobs:
   run-tests:
